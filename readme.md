@@ -1,8 +1,8 @@
 # Kombustion Bazel Monorepo
 
-[rules_kombustion](https://github.com/KablamoOSS/rules_kombustion)
-[Kombustion](https://github.com/KablamoOSS/kombustion)
-[Getting Started with Bazel](https://docs.bazel.build/versions/master/getting-started.html)
+- [rules_kombustion](https://github.com/KablamoOSS/rules_kombustion)
+- [Kombustion](https://github.com/KablamoOSS/kombustion)
+- [Getting Started with Bazel](https://docs.bazel.build/versions/master/getting-started.html)
 
 ## Getting Started
 
