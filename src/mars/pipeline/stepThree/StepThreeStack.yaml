@@ -3,12 +3,24 @@ AWSTemplateFormatVersion: 2010-09-09
 Parameters:
   Prefix:
     Type: "String"
+    Description: "A prefix specifc to this group of stacks."
+  SourceFolder:
+    Type: "String"
+    Description: "Name of the folder the BUILD file is in."
+  SourcePath:
+    Type: "String"
+    Description:
+      "The path from root to this build target. Passed in automatically via the
+      Bazel Kombustion rules."
   Environment:
     Type: "String"
+    Description: "Deployment environment."
   LambdaBucketName:
     Type: "String"
+    Description: "Name of the bucket Lambda zips are stored."
   CommitHash:
     Type: "String"
+    Description: "Commit hash of the source of this Stack"
 
 Resources:
   StepOneFunction:
@@ -17,15 +29,13 @@ Resources:
       Handler: index.handler
       Role: !GetAtt LambdaExecutionRole.Arn
       Runtime: python3.6
-      Name: !Join ["-", [!Ref Prefix, "StepThreeFunction", !Ref Environment]]
+      FunctionName:
+        !Join ["-", [!Ref Prefix, !Ref SourceFolder, !Ref Environment]]
       Code:
         S3Bucket: !Ref LambdaBucketName
         S3Key:
-          !Join [
-            "",
-            ["/src/mars/pipeline/stepThree/lambda-", !Ref CommitHash, ".zip"],
-          ]
-      Description: "Step One in our fake pipeline example"
+          !Join ["", [!Ref SourcePath, "/lambda-", !Ref CommitHash, ".zip"]]
+      Description: "Step Three in our fake pipeline example"
       Environment:
         ENVIRONMENT: !Ref Environment
 

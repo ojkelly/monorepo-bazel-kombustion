@@ -3,8 +3,9 @@ load("@io_bazel_rules_kombustion//:lambda.bzl", "lambda_upload")
 
 kombustion(
     name = "deploy",
+    iam = True,
     kombustion = "//src/mars/pipeline:kombustion",
-    stacks = ["StepTwoStack.yaml"],
+    templates = ["StepTwoStack.yaml"],
 )
 
 lambda_upload(

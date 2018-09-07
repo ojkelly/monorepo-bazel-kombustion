@@ -8,3 +8,8 @@ git_repository(
     commit = "0c4954468b7ca9e0e0e2473c417ecc0cbff45d55",
     remote = "https://github.com/KablamoOSS/rules_kombustion.git",
 )
+
+# local_repository(
+#     name = "io_bazel_rules_kombustion",
+#     path = "/Users/owenkelly/Code/go/src/github.com/ojkelly/rules_kombustion",
+)

@@ -17,5 +17,5 @@ kombustion_library(
 kombustion(
     name = "deploy",
     kombustion = "//src/jupiter/infrastructure:kombustion",
-    stacks = glob(["*Stack.yaml"]),
+    templates = glob(["*Stack.yaml"]),
 )
