@@ -1,0 +1,16 @@
+Name: JupiterInfrastructure
+Region: "us-east-1"
+Environments:
+  Development:
+    Parameters:
+      Environment: Development
+      LambdaBucketName: lambda.infrastructure.jupiter.example
+  Production:
+    AccountIDs:
+      - "000000"
+    Parameters:
+      Environment: Production
+      LambdaBucketName: lambda.infrastructure.jupiter.example
+GenerateDefaultOutputs: true
+Tags:
+  Realm: "Jupiter/Infrastructure"

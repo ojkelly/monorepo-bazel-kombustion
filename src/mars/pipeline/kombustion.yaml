@@ -1,0 +1,18 @@
+Name: MarsPipeline
+Region: "us-east-1"
+Environments:
+  Development:
+    Parameters:
+      Environment: Development
+      Prefix: MarsPipeline
+      LambdaBucketName: lambda.infrastructure.jupiter.example
+  Production:
+    AccountIDs:
+      - "000"
+    Parameters:
+      Environment: Production
+      Prefix: MarsPipeline
+      LambdaBucketName: lambda.infrastructure.jupiter.example
+GenerateDefaultOutputs: false
+Tags:
+  Realm: "Mars/Pipeline"
