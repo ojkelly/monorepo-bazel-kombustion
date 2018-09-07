@@ -9,19 +9,19 @@
 To deploy the lambda bucket run:
 
 ```
-bazel run //src/jupiter/infrastructure:deploy -- --profile={awsProfileHere}
+bazel run //src/jupiter/infrastructure:deploy
 ```
 
 Then upload the lambda:
 
 ```
-bazel run //src/mars/pipeline/stepOne:lambda -- --profile={awsProfileHere}
+bazel run //src/mars/pipeline/stepOne:lambda
 ```
 
 To deploy the lambda for stepOne run:
 
 ```
-bazel run //src/mars/pipeline/stepOne:deploy -- --profile={awsProfileHere}
+bazel run //src/mars/pipeline/stepOne:deploy
 ```
 
 ## Layout
